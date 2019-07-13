@@ -14,16 +14,17 @@ export class Formule_2 extends Component {
         e.preventDefault();
         this.props.prevStep();
     }
+   
     render() {
         const {values,handleChange} = this.props ;
 
         return (
-        <MuiThemeProvider>
+        <MuiThemeProvider >
         <React.Fragment>
       <AppBar title = " Compte rendu  "/>
          <TextField
            floatingLabelText = "Heure d'arrivé" 
-          type="datetime-local"
+          type="time"
          
           onChange = {handleChange('Harr')}
           defaultValue={values.Harr} 
@@ -60,8 +61,8 @@ export class Formule_2 extends Component {
         <br/>
         <TextField
         
-       floatingLabelText="Heure de départ"
-       type="datetime-local"
+       Label="Heure de départ"
+       type="time"
        onChange = {handleChange('Hdep')}
        defaultValue={values.Hdep}  />
        <br/>
@@ -89,6 +90,10 @@ export class Formule_2 extends Component {
     }
 }
 const styles = {
+    textField: {
+       
+        width: 200,
+      },
     button : {
         margin : 15 
     }

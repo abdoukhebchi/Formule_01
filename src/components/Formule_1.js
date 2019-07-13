@@ -8,17 +8,22 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 
 
+
 export class Formule_1 extends Component {
+   
+
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
     }
     render() {
+ 
         const {values,handleChange} = this.props ;
          //const [selectedDate, handleDateChange] = useState(new Date());
 
         return (
-        <MuiThemeProvider>
+         
+        <MuiThemeProvider  >
         <React.Fragment>
       <AppBar title = " Compte rendu  "/>
          <TextField
@@ -30,21 +35,21 @@ export class Formule_1 extends Component {
          <br/>
          <TextField
           hintText = "Priorité" 
-      
+         
           onChange = {handleChange('Pr')}
           defaultValue={values.Pr} 
          />
    <br/>
    <TextField
           hintText = "Site" 
-      
+        
           onChange = {handleChange('Site')}
           defaultValue={values.Site} 
          />
          <br/>
          <TextField
           hintText = "Déclaré par" 
-      
+        
           onChange = {handleChange('Decpar')}
           defaultValue={values.Decpar} 
          />
@@ -52,31 +57,46 @@ export class Formule_1 extends Component {
        
         <br/>
         <TextField
-       
-       floatingLabelText="Rédigé le"
+      
+      floatingLabelText ="Rédigé le"
        type="datetime-local"
+       InputLabelProps={{
+        shrink: true,
+      }}
        onChange = {handleChange('Reddate')}
-       defaultValue={values.Reddate}  />
+       defaultValue={values.Reddate} 
+       
+         
+       
+       />
         
+
+
         <br/>
         <TextField
           hintText = "Clôturé par" 
-      
+
           onChange = {handleChange('Clopar')}
           defaultValue={values.Clopar} 
          />
           <br/>
           <TextField
-       
-       floatingLabelText="Date de fin"
+        InputLabelProps={{
+            shrink: true,
+          }}
+       Label="Date de fin"
        type="datetime-local"
        onChange = {handleChange('fDate')}
+    
        defaultValue={values.fDate}  />
         <br/>
         <TextField
-       
-       floatingLabelText="A clôturer avant le"
+        InputLabelProps={{
+            shrink: true,
+          }}
+       Label="A clôturer avant le"
        type="datetime-local"
+  
        onChange = {handleChange('dateclo')}
        defaultValue={values.dateclo}  />
        <br/>
@@ -90,10 +110,16 @@ export class Formule_1 extends Component {
        
           </React.Fragment>
           </MuiThemeProvider>
+        
+          
         )
     }
 }
 const styles = {
+    textField: {
+      
+        width: 200,
+      },
     button : {
         margin : 15 
     }
